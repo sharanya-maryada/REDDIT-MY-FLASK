@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% from 'macros/_fields.html' import fields %}
+{% block content %}
+<div class='container'>
+<div class='row'>
+<div class='m-auto col-md-4'>
+    <h1 class='text-center'>Register</h1>
+    <form method='POST'>
+        {{ form.hidden_tag() }}
+        {{ fields(form.username) }}
+        {{ fields(form.email) }}
+        {{ fields(form.password) }}
+        {{ fields(form.confirm_password) }}
+        {{ form.submit(class='btn btn-primary') }}
+    </form>
+    <small><a href="{{ url_for('auth.login') }}">Already have an account?</a></small>
+</div>
+</div>
+</div>
+
+{% endblock content %}
